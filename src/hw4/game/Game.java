@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import hw4.maze.*;
+import hw4.player.Movement;
+import hw4.player.Player;
 
 public class Game {
 	private Grid grid;
@@ -114,4 +116,21 @@ public class Game {
 		return grid;
 	} 
 	
+	public Object play(Movement movement, Player player) {
+		Row currentRow = player.getCurrentRow();
+		Cell currentCell = player.getCurrentCell();
+		if(movement == Movement.UP && currentCell.getUp() != CellComponents.WALL) {
+			
+		}
+		if(movement == Movement.DOWN && currentCell.getDown() != CellComponents.WALL) {
+
+		}
+		if(movement == Movement.LEFT && currentCell.getLeft() != CellComponents.WALL) {
+
+		}
+		if(movement == Movement.RIGHT && currentCell.getRight() != CellComponents.WALL) {
+
+		}
+		return null;
+	}
 }
