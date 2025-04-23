@@ -12,4 +12,12 @@ public class Row {
 	public Row(ArrayList<Cell> c) {
 		cells = c;
 	}
+	
+	public ArrayList<Cell> getCells() {
+		return cells;
+	}
+	
+	public void setCells(ArrayList<Cell> c) {
+		this.cells = c;
+	}
 }
