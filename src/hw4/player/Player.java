@@ -3,32 +3,32 @@ package hw4.player;
 import hw4.maze.*;
 
 public class Player {
-	private Row currentRow;
-	private Cell currentCell;
+	private int currentRow;
+	private int currentCell;
 	
 	public Player() {
-		currentRow = null;
-		currentCell = null;
+		currentRow = -1;
+		currentCell = -1;
 	}
 	
-	public Player(Row r, Cell c) {
+	public Player(int r, int c) {
 		currentRow = r;
 		currentCell = c;
 	}
 	
-	public Row getCurrentRow() {
+	public int getCurrentRow() {
 		return currentRow;
 	}
 	
-	public void setCurrentRow(Row r) {
+	public void setCurrentRow(int r) {
 		this.currentRow = r;
 	}
 	
-	public Cell getCurrentCell() {
+	public int getCurrentCell() {
 		return currentCell;
 	}
 	
-	public void setCurrentCell(Cell c) {
+	public void setCurrentCell(int c) {
 		this.currentCell = c;
 	}
 }
