@@ -12,4 +12,12 @@ public class Grid {
 	public Grid(ArrayList<Row> r) {
 		rows = r;
 	}
+	
+	public ArrayList<Row> getRows() {
+		return rows;
+	}
+	
+	public void setRows(ArrayList<Row> r) {
+		this.rows = r;
+	}
 }
