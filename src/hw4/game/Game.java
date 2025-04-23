@@ -1,10 +1,9 @@
 package hw4.game;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import hw4.maze.*;
-import hw4.player.Movement;
-import hw4.player.Player;
 
 public class Game {
 	private Grid grid;
@@ -21,7 +20,6 @@ public class Game {
 		if(size >= 3 && size <= 7) {
 			this.createRandomGrid(size);
 		}
-		
 	}
 	
 	public Grid getGrid() {
@@ -32,9 +30,70 @@ public class Game {
 		this.grid = g;
 	}
 	
-	public void createRandomGrid(int size) {
-		// code to create random grid : this.grid = newGrid;
-		this.grid = newGrid(size);
+	public Grid createRandomGrid(int size) {
+		Random random = new Random();
+		
+		Grid grid = newGrid(size);
+		
+		//set a random leftmost cell to be the exit
+		int exitCellIndex = random.nextInt(size);
+		grid.getRows().get(exitCellIndex).getCells().get(0).setLeft(CellComponents.EXIT);
+		
+		int rIndex = 0;
+		int cIndex = 0;
+		for (Row r : grid.getRows()) {
+			for(Cell c : r.getCells()) {
+				boolean hasAperture = false;
+				if(rIndex == 0) {
+					c.setUp(CellComponents.WALL);
+				}
+				else {
+					if(hasAperture) {
+						CellComponents randomComponent = CellComponents.randomComponent();
+						c.setUp(randomComponent);
+					}
+					else { c.setUp(CellComponents.APERTURE); hasAperture = true;}
+				}
+				
+				if(cIndex == 0) {
+					c.setLeft(CellComponents.WALL);
+				}
+				else {
+					if(hasAperture) {
+						CellComponents randomComponent = CellComponents.randomComponent();
+						c.setLeft(randomComponent);
+					}
+					else { c.setLeft(CellComponents.APERTURE); hasAperture = true;}
+				}
+				
+				if(cIndex == size) {
+					c.setRight(CellComponents.WALL);
+				}
+				else {
+					if(hasAperture) {
+						CellComponents randomComponent = CellComponents.randomComponent();
+						c.setRight(randomComponent);
+					}
+					else { c.setRight(CellComponents.APERTURE); hasAperture = true;}
+				}
+				
+				if(rIndex == size) {
+					c.setDown(CellComponents.WALL);
+				}
+				else {
+					if(hasAperture) {
+						CellComponents randomComponent = CellComponents.randomComponent();
+						c.setDown(randomComponent);
+					}
+					else { c.setDown(CellComponents.APERTURE); hasAperture = true;}
+				}
+				
+				cIndex++;
+			}
+			rIndex++;
+		}
+		
+		return grid;
 	}
 
 	private Grid newGrid(int size) {
@@ -53,24 +112,6 @@ public class Game {
 		}		
 		Grid grid = new Grid(rows);
 		return grid;
-	}
-
-	public Object play(Movement movement, Player player) {
-		Row currentRow = player.getCurrentRow();
-		Cell currentCell = player.getCurrentCell();
-		if(movement == Movement.UP && currentCell.getUp() != CellComponents.WALL) {
-
-		}
-		if(movement == Movement.DOWN && currentCell.getDown() != CellComponents.WALL) {
-
-		}
-		if(movement == Movement.LEFT && currentCell.getLeft() != CellComponents.WALL) {
-
-		}
-		if(movement == Movement.RIGHT && currentCell.getRight() != CellComponents.WALL) {
-
-		}
-		return null;
 	} 
 	
 }
