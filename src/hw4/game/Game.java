@@ -13,11 +13,22 @@ public class Game {
 		grid = g;
 	}
 	
+	public Game(int size) {
+		if(size >= 3 && size <= 7) {
+			this.createRandomGrid(size);
+		}
+		
+	}
+	
 	public Grid getGrid() {
 		return grid;
 	}
 	
 	public void setGrid(Grid g) {
 		this.grid = g;
+	}
+	
+	public void createRandomGrid(int size) {
+		// code to create random grid : this.grid = newGrid;
 	}
 }
