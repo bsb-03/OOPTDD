@@ -12,4 +12,12 @@ public class Game {
 	public Game(Grid g) {
 		grid = g;
 	}
+	
+	public Grid getGrid() {
+		return grid;
+	}
+	
+	public void setGrid(Grid g) {
+		this.grid = g;
+	}
 }
