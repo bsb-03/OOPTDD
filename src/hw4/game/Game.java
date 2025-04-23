@@ -117,19 +117,24 @@ public class Game {
 	} 
 	
 	public Object play(Movement movement, Player player) {
-		Row currentRow = player.getCurrentRow();
-		Cell currentCell = player.getCurrentCell();
+
+		Row currentRow = this.grid.getRows().get(player.getCurrentRow());
+		Cell currentCell = currentRow.getCells().get(player.getCurrentCell());
+		
+		int currentRowInt = player.getCurrentRow();
+		int currentCellInt = player.getCurrentCell();
+		
 		if(movement == Movement.UP && currentCell.getUp() != CellComponents.WALL) {
-			
+			player.setCurrentRow(currentRowInt-1);
 		}
 		if(movement == Movement.DOWN && currentCell.getDown() != CellComponents.WALL) {
-
+			player.setCurrentRow(currentRowInt+1);
 		}
 		if(movement == Movement.LEFT && currentCell.getLeft() != CellComponents.WALL) {
-
+			player.setCurrentCell(currentCellInt-1);
 		}
 		if(movement == Movement.RIGHT && currentCell.getRight() != CellComponents.WALL) {
-
+			player.setCurrentCell(currentCellInt-1);
 		}
 		return null;
 	}
