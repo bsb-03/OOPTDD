@@ -1,7 +1,7 @@
 package hw4.maze;
 
 public class Cell {
-	CellComponents up, down, left, right;
+	private CellComponents up, down, left, right;
 	public Cell() {
 		up = null;
 		down = null;
