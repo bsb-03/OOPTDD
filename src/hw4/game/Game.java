@@ -1,5 +1,7 @@
 package hw4.game;
 
+import java.util.ArrayList;
+
 import hw4.maze.*;
 
 public class Game {
@@ -30,5 +32,25 @@ public class Game {
 	
 	public void createRandomGrid(int size) {
 		// code to create random grid : this.grid = newGrid;
+		this.grid = newGrid(size);
 	}
+
+	private Grid newGrid(int size) {
+		ArrayList<Cell> cells = new ArrayList<Cell>();
+		ArrayList<Row> rows = new ArrayList<Row>();
+		
+		for(int i=0;i>size;i++)
+		{
+			for(int x=0;x>size;x++) {
+				Cell cell = new Cell();
+				cells.add(cell);
+			}
+			Row row = new Row(cells);
+			rows.add(row);
+			cells.clear();
+		}		
+		Grid grid = new Grid(rows);
+		return grid;
+	} 
+	
 }
