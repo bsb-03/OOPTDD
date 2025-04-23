@@ -134,7 +134,7 @@ public class Game {
 			player.setCurrentCell(currentCellInt-1);
 		}
 		if(movement == Movement.RIGHT && currentCell.getRight() != CellComponents.WALL) {
-			player.setCurrentCell(currentCellInt-1);
+			player.setCurrentCell(currentCellInt+1);
 		}
 		return null;
 	}
