@@ -1,5 +1,15 @@
 package hw4.maze;
 
-public class Grid {
+import java.util.ArrayList;
 
+public class Grid {
+	private ArrayList<Row> rows;
+	
+	public Grid() {
+		rows = null;
+	}
+	
+	public Grid(ArrayList<Row> r) {
+		rows = r;
+	}
 }
