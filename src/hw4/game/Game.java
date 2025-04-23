@@ -35,10 +35,6 @@ public class Game {
 		
 		Grid grid = newGrid(size);
 		
-		//set a random leftmost cell to be the exit
-		int exitCellIndex = random.nextInt(size);
-		grid.getRows().get(exitCellIndex).getCells().get(0).setLeft(CellComponents.EXIT);
-		
 		int rIndex = 0;
 		int cIndex = 0;
 		for (Row r : grid.getRows()) {
@@ -92,6 +88,10 @@ public class Game {
 			}
 			rIndex++;
 		}
+		
+		//set a random leftmost cell to be the exit
+		int exitCellIndex = random.nextInt(size);
+		grid.getRows().get(exitCellIndex).getCells().get(0).setLeft(CellComponents.EXIT);
 		
 		return grid;
 	}
