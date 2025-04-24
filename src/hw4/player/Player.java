@@ -3,32 +3,58 @@ package hw4.player;
 import hw4.maze.*;
 
 public class Player {
-	private int currentRow;
-	private int currentCell;
+	
+	private Row currentRow;
+	private Cell currentCell;
+
+	private int currentRowInt;
+	private int currentCellInt;
 	
 	public Player() {
-		currentRow = -1;
-		currentCell = -1;
+		currentRow = null;
+		currentCell = null;
+		
+		currentRowInt = -1;
+		currentCellInt = -1;
 	}
 	
-	public Player(int r, int c) {
+	public Player(Row r, Cell c) {
 		currentRow = r;
 		currentCell = c;
+		
+		currentRowInt = -1;
+		currentCellInt = -1;
 	}
 	
-	public int getCurrentRow() {
+	public int getCurrentRowInt() {
+		return currentRowInt;
+	}
+	
+	public void setCurrentRowInt(int r) {
+		this.currentRowInt = r;
+	}
+	
+	public int getCurrentCellInt() {
+		return currentCellInt;
+	}
+	
+	public void setCurrentCellInt(int c) {
+		this.currentCellInt = c;
+	}
+
+	public Row getCurrentRow() {
 		return currentRow;
 	}
-	
-	public void setCurrentRow(int r) {
-		this.currentRow = r;
+
+	public void setCurrentRow(Row currentRow) {
+		this.currentRow = currentRow;
 	}
-	
-	public int getCurrentCell() {
+
+	public Cell getCurrentCell() {
 		return currentCell;
 	}
-	
-	public void setCurrentCell(int c) {
-		this.currentCell = c;
+
+	public void setCurrentCell(Cell currentCell) {
+		this.currentCell = currentCell;
 	}
 }
