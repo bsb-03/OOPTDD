@@ -81,6 +81,9 @@ public class Cell {
 	 */
 	public void setLeft(CellComponents left) {
 		this.left = left;
+		if(left == null) {
+			this.left = null;
+		}
 	}
 	
 	/**

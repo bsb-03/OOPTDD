@@ -79,6 +79,8 @@ class CellTest {
 				CellComponents.EXIT, 
 				CellComponents.APERTURE, 
 				CellComponents.WALL);
+		// i will not edit this logic, but our error check cannot pass when you set
+		// the value of the cell to NULL and then immediately check if it is equal to WALL.
 		cell.setUp(null);
 		assertEquals(CellComponents.WALL, cell.getUp());
 	}
@@ -99,6 +101,8 @@ class CellTest {
 				CellComponents.EXIT, 
 				CellComponents.WALL, 
 				CellComponents.APERTURE);
+		// i will not edit this logic, but our error check cannot pass when you set
+		// the value of the cell to NULL and then immediately check if it is equal to WALL.
 		cell.setDown(null);
 		assertEquals(CellComponents.WALL, cell.getDown());
 	}
@@ -119,6 +123,8 @@ class CellTest {
 				CellComponents.EXIT, 
 				CellComponents.APERTURE, 
 				CellComponents.WALL);
+		// i will not edit this logic, but our error check cannot pass when you set
+		// the value of the cell to NULL and then immediately check if it is equal to WALL.
 		cell.setLeft(null);
 		assertEquals(CellComponents.WALL, cell.getLeft());
 	}
@@ -139,6 +145,8 @@ class CellTest {
 				CellComponents.EXIT, 
 				CellComponents.APERTURE, 
 				CellComponents.WALL);
+		// i will not edit this logic, but our error check cannot pass when you set
+		// the value of the cell to NULL and then immediately check if it is equal to WALL.
 		cell.setRight(null);
 		assertEquals(CellComponents.WALL, cell.getRight());
 	}
