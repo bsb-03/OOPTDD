@@ -118,23 +118,27 @@ public class Game {
 	
 	public Object play(Movement movement, Player player) {
 
-		Row currentRow = this.grid.getRows().get(player.getCurrentRow());
-		Cell currentCell = currentRow.getCells().get(player.getCurrentCell());
+		Row currentRow = this.grid.getRows().get(player.getCurrentRowInt());
+		Cell currentCell = currentRow.getCells().get(player.getCurrentCellInt());
 		
-		int currentRowInt = player.getCurrentRow();
-		int currentCellInt = player.getCurrentCell();
+		int currentRowInt = player.getCurrentRowInt();
+		int currentCellInt = player.getCurrentCellInt();
 		
 		if(movement == Movement.UP && currentCell.getUp() != CellComponents.WALL) {
-			player.setCurrentRow(currentRowInt-1);
+			player.setCurrentRowInt(currentRowInt-1);
+			player.setCurrentRow(this.grid.getRows().get(currentRowInt - 1));
 		}
 		if(movement == Movement.DOWN && currentCell.getDown() != CellComponents.WALL) {
-			player.setCurrentRow(currentRowInt+1);
+			player.setCurrentRowInt(currentRowInt+1);
+			player.setCurrentRow(this.grid.getRows().get(currentRowInt + 1));
 		}
 		if(movement == Movement.LEFT && currentCell.getLeft() != CellComponents.WALL) {
-			player.setCurrentCell(currentCellInt-1);
+			player.setCurrentCellInt(currentCellInt-1);
+			player.setCurrentCell(currentRow.getCells().get(currentCellInt - 1));
 		}
 		if(movement == Movement.RIGHT && currentCell.getRight() != CellComponents.WALL) {
-			player.setCurrentCell(currentCellInt+1);
+			player.setCurrentCellInt(currentCellInt+1);
+			player.setCurrentCell(currentRow.getCells().get(currentCellInt + 1));
 		}
 		return null;
 	}
