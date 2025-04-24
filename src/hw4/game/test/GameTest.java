@@ -246,3 +246,4 @@ class GameTest {
 		return true;
 	}
 }
+
