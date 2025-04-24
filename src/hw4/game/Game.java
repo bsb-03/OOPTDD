@@ -10,28 +10,59 @@ import hw4.player.Player;
 public class Game {
 	private Grid grid;
 	
+	/**
+	 * Default constructor for game class.
+	 */
 	public Game() {
 		grid = null;
 	}
 	
+	/**
+	 * Parameterized constructor for game class.
+	 * @param g - Contains an ArrayList of rows.
+	 */
 	public Game(Grid g) {
 		grid = g;
 	}
 	
+	/**
+	 * public Game(int size) - Checks that the size of
+	 * the grid is within bounds.
+	 * @param size - Size of the grid
+	 */
 	public Game(int size) {
 		if(size >= 3 && size <= 7) {
 			this.createRandomGrid(size);
 		}
 	}
 	
+	/**
+	 * Getter method for grid
+	 * @return
+	 */
 	public Grid getGrid() {
 		return grid;
 	}
 	
+	/**
+	 * Setter method for grid
+	 * @param g
+	 */
 	public void setGrid(Grid g) {
 		this.grid = g;
 	}
 	
+	/**
+	 * public Grid createRandomGrid(int size) - This method takes an integer as a parameter
+	 * which is used to determine the dimensions of a randomly generated grid. Uses a helper function to generate an
+	 * empty grid with these dimensions. This method then generates cells and populates the empty grid. Contains logic to ensure
+	 * that the position of the exit will be properly placed on the leftmost part of a cell on the leftmost 
+	 * part of the grid. Contains logic to ensure that the bounds of the grid will contain walls. Contains logic
+	 * to ensure that walls/apertures are otherwise randomly assigned if the cells are not constrained.
+	 * 
+	 * @param size - Size integer used to determine the dimensions of the random grid
+	 * @return
+	 */
 	public Grid createRandomGrid(int size) {
 		Random random = new Random();
 		
@@ -97,7 +128,15 @@ public class Game {
 		
 		return grid;
 	}
-
+	
+	/**
+	 * private Grid newGrid(int size) - Helper method for createRandomGrid(int size) method,
+	 * this method generates an empty grid with the size parameter used to determine the dimensions
+	 * of the grid. Returns the empty grid.
+	 * 
+	 * @param size - Integer size used to determine the dimensions of the grid.
+	 * @return
+	 */
 	private Grid newGrid(int size) {
 		ArrayList<Cell> cells = new ArrayList<Cell>();
 		ArrayList<Row> rows = new ArrayList<Row>();
@@ -116,6 +155,15 @@ public class Game {
 		return grid;
 	} 
 	
+	/**
+	 * public Object play(Movement movement, Player player) - Method updates the position of the 
+	 * agent space depending on the input passed through the movement parameter. Contains logic to ensure
+	 * that the agent cannot move into cells that are blocked by walls. Updates the current row position and index.
+	 * 
+	 * @param movement - Parameter movement determines the direction in which the agent will move.
+	 * @param player - Parameter player is the player object represented as the agent on the board.
+	 * @return
+	 */
 	public Object play(Movement movement, Player player) {
 
 		Row currentRow = this.grid.getRows().get(player.getCurrentRowInt());
