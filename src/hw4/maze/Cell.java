@@ -15,10 +15,10 @@ public class Cell {
 	}
 
 	public Cell(CellComponents u, CellComponents b, CellComponents l, CellComponents r) {
-		up = u;
-		down = b;
-		left = l;
-		right = r;
+		left = u;
+		right = b;
+		up = l;
+		down = r;
 	}
 
 	public CellComponents getUp() {
