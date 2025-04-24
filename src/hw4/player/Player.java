@@ -33,8 +33,8 @@ public class Player {
 		currentRow = r;
 		currentCell = c;
 		
-		currentRowInt = -1;
-		currentCellInt = -1;
+		currentRowInt = 0;
+		currentCellInt = 0;
 	}
 	
 	/**

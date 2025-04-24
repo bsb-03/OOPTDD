@@ -190,4 +190,11 @@ public class Game {
 		}
 		return null;
 	}
+
+	@Override
+	public String toString() {
+		return "Game [grid=" + grid + "]";
+	}
+	
+	
 }
