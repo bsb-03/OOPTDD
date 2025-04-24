@@ -9,6 +9,11 @@ public class Cell {
 		right = null;
 	}
 	
+	@Override
+	public String toString() {
+		return "Cell [left=" + left + ", right=" + right + ", up=" + up + ", down=" + down + "]";
+	}
+
 	public Cell(CellComponents u, CellComponents b, CellComponents l, CellComponents r) {
 		up = u;
 		down = b;

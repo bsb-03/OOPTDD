@@ -5,6 +5,11 @@ import java.util.ArrayList;
 public class Row {
 	private ArrayList<Cell> cells;
 	
+	@Override
+	public String toString() {
+		return "Row [cells=" + cells + "]";
+	}
+
 	public Row() {
 		cells = null;
 	}

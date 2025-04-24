@@ -46,6 +46,12 @@ public class Player {
 		return currentRow;
 	}
 
+	@Override
+	public String toString() {
+		return "Player [currentRow=" + currentRow + ", currentCell=" + currentCell + ", currentRowInt=" + currentRowInt
+				+ ", currentCellInt=" + currentCellInt + "]";
+	}
+
 	public void setCurrentRow(Row currentRow) {
 		this.currentRow = currentRow;
 	}

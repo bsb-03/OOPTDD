@@ -5,6 +5,11 @@ import java.util.ArrayList;
 public class Grid {
 	private ArrayList<Row> rows;
 	
+	@Override
+	public String toString() {
+		return "Grid [rows=" + rows + "]";
+	}
+
 	public Grid() {
 		rows = null;
 	}
@@ -20,4 +25,5 @@ public class Grid {
 	public void setRows(ArrayList<Row> r) {
 		this.rows = r;
 	}
+
 }
