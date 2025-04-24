@@ -7,6 +7,11 @@ public enum CellComponents {
 	APERTURE,
 	EXIT;
 	
+	/**
+	 * public static CellComponents randomComponent() - This method contains logic
+	 * to ensure that the cell component will be random.
+	 * @return
+	 */
 	public static CellComponents randomComponent() {
 		Random random = new Random();
 		
